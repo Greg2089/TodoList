@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Todo List</string>
+    <string name="enter_note">Введите текст заметки и выберите приоритет</string>
+    <string name="low">Низкий</string>
+    <string name="medium">Средний</string>
+    <string name="high">Высокий</string>
+    <string name="save">Сохранить</string>
+    <string name="error_fields_empty">Пожалуйста, заполните все поля:</string>
 </resources>

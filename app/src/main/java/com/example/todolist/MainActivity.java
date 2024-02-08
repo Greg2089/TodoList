@@ -1,5 +1,6 @@
 package com.example.todolist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -32,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
             notes.add(note);
         }
         showNotes();
+
+        buttonAddNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = EnterNoteActivity.newIntent(MainActivity.this);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initViews() {
@@ -46,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
                     linearLayoutNotes,
                     false
             );
+            linearLayoutNotes.addView(view);
+
             TextView textViewNote = view.findViewById(R.id.textViewNote);
             textViewNote.setText(note.getText());
 
@@ -64,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
             int color = ContextCompat.getColor(this, colorResId);
             textViewNote.setBackgroundColor(color);
-            linearLayoutNotes.addView(view);
+
         }
     }
 }
