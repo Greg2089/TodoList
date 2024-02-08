@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EnterNoteActivity extends AppCompatActivity {
 
+    Database database = Database.getInstance();
+
     private EditText editTextEnterNote;
     private RadioButton radioButtonLow;
     private RadioButton radioButtonMedium;
@@ -31,7 +33,6 @@ public class EnterNoteActivity extends AppCompatActivity {
         });
     }
 
-
     private void initViews() {
         editTextEnterNote = findViewById(R.id.editTextEnterNote);
         radioButtonLow = findViewById(R.id.radioButtonLow);
@@ -47,6 +48,11 @@ public class EnterNoteActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
         int priority = getPriority();
+        int id = database.getNotes().size();
+        Note note = new Note(id, text, priority);
+        database.add(note);
+
+        finish();
     }
 
     private int getPriority() {
