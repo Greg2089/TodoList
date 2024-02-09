@@ -8,6 +8,7 @@ public class Database {
     private final ArrayList<Note> notes = new ArrayList<>();
     public static Database instance = null;
 
+    //Singleton
     public static Database getInstance() {
         if (instance == null) {
             instance = new Database();
