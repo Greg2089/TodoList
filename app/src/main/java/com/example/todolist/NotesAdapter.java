@@ -26,6 +26,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         notifyDataSetChanged();
     }
 
+    public ArrayList<Note> getNotes() {
+        return new ArrayList<>(notes);
+    }
+
     // Create new views (invoked by the layout manager)
     @NonNull
     @Override
