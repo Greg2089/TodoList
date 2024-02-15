@@ -1,4 +1,4 @@
-package com.example.todolist;
+/*package com.example.todolist;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -40,4 +40,4 @@ public class Database {
             notes.add(note);
         }
     }
-}
+}*/
